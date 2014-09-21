@@ -1,0 +1,1 @@
+Just run script in R. All path wrote in script.
