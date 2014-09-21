@@ -30,5 +30,5 @@ colnames(dataset)<-features[sel_cols,2]
 
 # From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-tidy_dataset<-tapply(dataset,list(y_factor, subject) , mean)
-write.table(tidy_dataset,file = "tidy_dataset.txt")
+tidy_dataset<-by(dataset,list(y_factor, subject) , mean)
+write.table(tidy_dataset,file = "tidy_dataset.txt", row.name=F)
