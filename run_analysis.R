@@ -1,6 +1,6 @@
 # Merges the training and the test sets to create one data set.
 features<-read.table("./UCI HAR Dataset/features.txt")
-activiti_labels<-read.table("./UCI HAR Dataset/activity_labels.txt")
+activity_labels<-read.table("./UCI HAR Dataset/activity_labels.txt")
 
 X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
 X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
@@ -23,7 +23,7 @@ dataset<-X_dataset[,sel_cols]
 
 # Uses descriptive activity names to name the activities in the data set
 y_factor <- as.factor(y_vector)
-levels(y_factor)<-activiti_labels$V2
+levels(y_factor)<-activity_labels$V2
   
 # Appropriately labels the data set with descriptive variable names. 
 colnames(dataset)<-features[sel_cols,2]
